@@ -1,0 +1,15 @@
+{
+  "name": "atividadejwt",
+  "version": "1.0.0",
+  "description": "Atividade para criar uma API REST que usa JWT como autenticador",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WilliamCP",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
