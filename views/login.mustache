@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bem-vindo</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(to right, #32CD32, #7CFC00);
+            }
+
+            .container {
+                height: 100px;
+                padding: 20px;
+                background-color: #ADFF2F;
+                border-radius: 5px;
+                box-shadow: 8px 8px 10px rgba(0, 115, 0, 0.6);
+            }
+
+            h1 {
+                color: #2E8B57;
+            }
+            
+            button {
+                margin-top: 5px;
+
+                background-color: #4CAF50;
+                color: white;
+                padding: 4px 4px;
+                text-align: center;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Login</h1>
+            <h3>{{mensagem}}</h3>
+            
+            <form action="/login" method="POST">
+                <input type="text" name="username" placeholder="Nome de usuário">
+                <input type="password" name="password" placeholder="Senha">
+                <button type="submit">Login</button>
+
+                {{#error}}
+                    <br><span class="error">{{error}}</span>
+                {{/error}}
+            </form>
+
+            <a href="/registrar"><button type="button">Registrar</button></a>
+            <a href="/usuario"><button type="button">Excluir Usuario</button></a>
+        </div>
+    </body>
+</html>
