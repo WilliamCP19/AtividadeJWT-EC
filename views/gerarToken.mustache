@@ -22,24 +22,34 @@
             }
 
             .container {
-                height: 100px;
+                height: auto;
                 padding: 20px;
                 background-color: #ADFF2F;
                 border-radius: 5px;
                 box-shadow: 8px 8px 10px rgba(0, 115, 0, 0.6);
             }
 
-            h1 {
+            h1, p {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 color: #2E8B57;
             }
-            
-            button {
-                margin-top: 5px;
 
+
+            textarea {
+                background-color: #BCEE68;
+            }
+            
+            #geraToken {
+                width: 100%;
+                font-size: 15px;
+                font-weight: bold;
+                margin-top: 5px;
+                
                 background-color: #4CAF50;
                 color: white;
                 padding: 4px 4px;
-                text-align: center;
                 cursor: pointer;
                 border: none;
                 border-radius: 5px;
@@ -47,23 +57,13 @@
         </style>
     </head>
     <body>
-
         <div class="container">
-            <h1>Login</h1>
-            <h3>{{mensagem}}</h3>
-            
-            <form action="/login" method="POST">
-                <input type="text" name="username" placeholder="Nome de usuário">
-                <input type="password" name="password" placeholder="Senha">
-                <button type="submit">Login</button>
-
-                {{#error}}
-                    <br><span class="error">{{error}}</span>
-                {{/error}}
+            <h1>Gerar Token</h1>
+            <form action="/gerando-token" method=POST>
+                <p>Digite a mensagem para criptografar</p>
+                <textarea id="msg" name="msg" rows="3" cols="33" required></textarea> <br>
+                <button type="submit" id="geraToken">Gerar</button>
             </form>
-
-            <a href="/registrar"><button type="button">Registrar</button></a>
-            <a href="/usuario"><button type="button">Excluir Usuario</button></a>
         </div>
     </body>
 </html>

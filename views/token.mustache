@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registro de Usuário</title>
+        <title>Bem-vindo</title>
+
         <style>
             * {
                 margin: 0;
@@ -21,15 +22,39 @@
             }
 
             .container {
-                height: 100px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: auto;
                 padding: 20px;
                 background-color: #ADFF2F;
                 border-radius: 5px;
                 box-shadow: 8px 8px 10px rgba(0, 115, 0, 0.6);
             }
 
-            h1 {
+            h1, h3, h4, p {
                 color: #2E8B57;
+            }
+
+            p {
+                margin-top: 8px;
+                margin-bottom: 8px;
+            }
+
+            select {
+                width: 210px;
+                color: #006400;
+                text-align: center;
+                padding: 4px;
+                border: 1px solid #98FB98;
+                border-radius: 5px;
+                font-size: 15px;
+                background-color: #7FFF00;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            textarea {
+                background-color: #BCEE68;
             }
             
             button {
@@ -44,19 +69,12 @@
                 border-radius: 5px;
             }
         </style>
-
     </head>
     <body>
-        <div class="container">
-            <h1>Registro de Usuário</h1>
-            
-            <form action="/registro" method="POST">
-                <input type="text" name="username" placeholder="Nome de usuário" required>
-                <input type="password" name="password" placeholder="Senha" required>
-                <button type="submit">Registrar</button>
-            </form> <br>
 
-            <a href="/login">Já possui uma conta? Faça login aqui</a>
+        <div class="container">
+            <h1>Token Gerado</h1>
+            <textarea id="msg" name="msg" rows="5" cols="45" required></textarea>
         </div>
     </body>
 </html>

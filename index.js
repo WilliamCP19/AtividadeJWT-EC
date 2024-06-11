@@ -1,7 +1,7 @@
 const express = require('express');
 const mustache = require('mustache-express');
 const users = require('./config/user');
-// const authRoutes = require('./rotas/auth');
+const tokenJWT = require('./rotas/auth');
 
 const servidor = express();
 
@@ -14,23 +14,16 @@ servidor.engine('mustache', mustache());
 servidor.set('view engine', 'mustache');
 servidor.set('views', __dirname + '/views');
 
-servidor.get('/login', (req, res) => {
-    res.render ('login');
+servidor.get('/', (req, res) => {
+    res.render('gerarToken');
 })
 
-servidor.get('/registrar', (req, res) => {
-    res.render('registrar');
+servidor.get('/token', (req, res) => {
+    res.render('token')
 })
 
-servidor.post('/registro', (req, res) => {
-    const { username, password } = req.body;
-    
-    users.addUser(username, password, (err) => {
-        if (err) {
-            res.status(500).send(err); return;
-        }
-        res.status(200).send("Usuario Cadastrado :)");
-    })
+servidor.post('/gerando-token', (req, res) => {
+    res.json("TESTE");
 })
 
 servidor.listen (3000, () => {
