@@ -1,6 +1,5 @@
 const express = require('express');
 const mustache = require('mustache-express');
-const users = require('./config/user');
 const tokenJWT = require('./rotas/auth');
 
 const servidor = express();
@@ -23,7 +22,10 @@ servidor.get('/token', (req, res) => {
 })
 
 servidor.post('/gerando-token', (req, res) => {
-    res.json("TESTE");
+    const mensagem = req.body.msg;
+    res.render('token', {
+        token : tokenJWT(mensagem)
+    });
 })
 
 servidor.listen (3000, () => {
