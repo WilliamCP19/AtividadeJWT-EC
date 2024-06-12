@@ -1,6 +1,6 @@
 const express = require("express");
 const mustache = require("mustache-express");
-const tokenJWT = require("./rotas/auth");
+const tokenJWT = require("./auth");
 
 const servidor = express();
 
