@@ -11,10 +11,12 @@ servidor.engine("mustache", mustache());
 servidor.set("view engine", "mustache");
 servidor.set("views", __dirname + "/views");
 
+//Rota Principal (Inicie nesta rota)
 servidor.get("/", (req, res) => {
     res.render("gerarToken");
 });
 
+//Rota para fornecer um token. (Se já possuir um token acesse esta rota)
 servidor.get("/token", (req, res) => {
     res.render("token");
 });
