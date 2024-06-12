@@ -7,8 +7,6 @@ const servidor = express();
 servidor.use(express.json());
 servidor.use(express.urlencoded({ extended: true }));
 
-// servidor.use('/auth', authRoutes);
-
 servidor.engine("mustache", mustache());
 servidor.set("view engine", "mustache");
 servidor.set("views", __dirname + "/views");

@@ -76,7 +76,7 @@
         </div>
 
         <script>
-            document.querySelector('form').addEventListener('submit', function(event) {
+            window.addEventListener('load', () => {
                 let textarea = document.querySelector('textarea');
                 textarea.value = textarea.value.trim();
             });
