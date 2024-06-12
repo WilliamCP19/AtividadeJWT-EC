@@ -33,9 +33,6 @@
             }
 
             h1, p {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 color: #2E8B57;
             }
 
@@ -49,9 +46,6 @@
             }
             
             button {
-                width: 100%;
-                font-size: 15px;
-                font-weight: bold;
                 margin-top: 5px;
 
                 background-color: #4CAF50;
@@ -66,20 +60,10 @@
     </head>
     <body>
 
-
         <div class="container">
-            <h1>Token Gerado</h1>
-            <form action="/descriptografando-token" method=POST>
-                <textarea id="token" name="token" rows="5" cols="45"> {{ token }}</textarea> <br>    
-                <button type="submit">Validar Token</button>
-            </form>
+            <h1>Mensagem Descriptografa</h1>
+            <textarea id="token" name="token" rows="3" cols="33" disabled="disabled"> {{ mensagem }}</textarea>
+            <a href="/">Digitar Nova Mensagem</a>
         </div>
-
-        <script>
-            document.querySelector('form').addEventListener('submit', function(event) {
-                let textarea = document.querySelector('textarea');
-                textarea.value = textarea.value.trim();
-            });
-        </script>
     </body>
 </html>
